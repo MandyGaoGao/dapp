@@ -90,12 +90,10 @@ App = {
       console.warn(error);
     });
   },
-/////////////////////////////////////////////////////////////////////
   castBid: function() {
     App.contracts.Auction.deployed().then(function(instance) {
       return instance.bid({ from: App.account });
     }).then(function(result) {
-      // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
     }).catch(function(err) {
