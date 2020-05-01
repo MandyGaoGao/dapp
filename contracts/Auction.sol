@@ -27,7 +27,7 @@ contract Auction {
         );
         
         require(
-            msg.value == 1 ether
+            msg.value > highestBid
         );
 
         if (highestBid != 0) {
